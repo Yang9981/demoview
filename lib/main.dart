@@ -6,6 +6,10 @@ import 'model/drawerdemo.dart';
 import 'model/bottom_navbar.dart';
 import 'model/basicdemo.dart';
 import 'model/layout_demo.dart';
+import 'model/gridview_demo.dart';
+
+
+
 
 void main() {
   runApp(MyApp());
@@ -17,6 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -40,7 +45,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         appBar: AppBar(
           title:(Text('TAB')),
@@ -57,6 +62,7 @@ class Home extends StatelessWidget {
                 Text('财经'),
                 Text('体育', textDirection: TextDirection.ltr,),
                 Icon(Icons.accessible),
+                Icon(Icons.grade),
             ],
           ),
         ),
@@ -69,6 +75,7 @@ class Home extends StatelessWidget {
               BasicDemo(),
               LayoutDemo(),
               ViewDemo(),
+              GridDemo(),
     ]
     ),
         drawer: DrawerDemo(),
