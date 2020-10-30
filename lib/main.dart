@@ -7,7 +7,7 @@ import 'model/bottom_navbar.dart';
 import 'model/basicdemo.dart';
 import 'model/layout_demo.dart';
 import 'model/gridview_demo.dart';
-
+import 'model/sliver_demo.dart';
 
 
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Home(),
+      home: SliverDemo(),
       debugShowCheckedModeBanner: false,
     );
   }
