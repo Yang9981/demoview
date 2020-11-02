@@ -14,7 +14,6 @@ class GridDemo extends StatelessWidget {
     });
   }
 
-
   Widget _gridItemBuilder(BuildContext context,int index) //定义一个界面里面放了图片
   {
       return Container(
