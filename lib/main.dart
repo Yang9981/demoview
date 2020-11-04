@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: SliverDemo(),
+      home: Home(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -45,7 +45,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 6,
       child: Scaffold(
         appBar: AppBar(
           title:(Text('TAB')),
@@ -63,6 +63,7 @@ class Home extends StatelessWidget {
                 Text('体育', textDirection: TextDirection.ltr,),
                 Icon(Icons.accessible),
                 Icon(Icons.grade),
+                Icon(Icons.assignment),
             ],
           ),
         ),
@@ -76,6 +77,7 @@ class Home extends StatelessWidget {
               LayoutDemo(),
               ViewDemo(),
               GridDemo(),
+              SliverDemo(),
     ]
     ),
         drawer: DrawerDemo(),
