@@ -8,8 +8,8 @@ import 'model/basicdemo.dart';
 import 'model/layout_demo.dart';
 import 'model/gridview_demo.dart';
 import 'model/sliver_demo.dart';
-
-
+import 'model/post_show.dart';
+import 'model/form_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,23 +20,53 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Home(),
+      initialRoute: '/form',
+      routes: {
+        '/':(context)=>Home(),
+        '/about':(context)=>PostShow(),
+        '/form':(context)=>FormPage(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }
 }
+
 class Home extends StatelessWidget {
 
   Widget _listItemBuilder(BuildContext context,int index){
     return Container(
       color: Colors.white,
       margin: EdgeInsets.all(8.0),
-      child: Column(
+      child: Stack(
         children: <Widget>[
-          Image.network(posts[index].imgeUrl),
-          SizedBox(height: 16.0,),
-          Text(
-            posts[index].title+'    '+posts[index].author,
+          Column(
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 16/9,
+                child: Image.network(posts[index].imgeUrl,fit: BoxFit.cover,),
+              ),
+              SizedBox(height: 16.0,),
+              Text(
+               posts[index].author,
+              ),
+              Text(
+                posts[index].title,
+              )
+            ],
+          ),
+          Positioned.fill(
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                splashColor: Colors.white.withOpacity(0.3),
+                highlightColor: Colors.white.withOpacity(0.1),
+                onTap: (){
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context)=>PostShow(post:posts[index],))
+                  );
+                },
+              ),
+            ),
           )
         ],
       ),

@@ -31,7 +31,7 @@ class SliverDemo extends StatelessWidget {
           ),
           SliverSafeArea(
             sliver: SliverPadding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(10.0),
               sliver: SliverListDemo(),
             ),
           )
@@ -76,14 +76,14 @@ class SliverListDemo extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.only(bottom: 32.0),
             child: Material(
-              borderRadius: BorderRadius.circular(20.0),
-              elevation: 15.0,
-              shadowColor: Colors.lightBlueAccent.withOpacity(0.8),
+              borderRadius: BorderRadius.circular(20.0),  //圆角
+              elevation: 15.0,//阴影
+              shadowColor: Colors.lightBlueAccent.withOpacity(0.8), //阴影颜色
               child:Stack(
                 children: <Widget>[
                   AspectRatio(
-                    aspectRatio: 16/9,
-                    child: Image.network(posts[index].imgeUrl,fit: BoxFit.fill,),
+                    aspectRatio: 16/9, //比例
+                    child: Image.network(posts[index].imgeUrl,fit: BoxFit.fill,), //图片
                   ),
                   Positioned(
                     top: 32.0,
